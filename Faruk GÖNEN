@@ -1,0 +1,51 @@
+# Discover some devices automatically
+discovery:
+
+
+# Sensors
+sensor:
+  - platform: mitemp_bt
+    mac: 'Secret Mac Adress'
+    name: Secret Name
+    force_update: true
+    median: 1
+    monitored_conditions:
+      - temperature
+      - humidity
+      
+  - platform: time_date
+    display_options:
+      - 'time_date'
+      
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
+
+lovelace:
+  mode: yaml
+  
+logger:
+  default: info
+  
+homekit:
+
+  
+mqtt:
+  broker: homeassistant # This will have to be your mqtt broker
+  discovery: true
+  port: 8883
+  username: Secret User Name
+  password: Secret Password
+
+input_boolean:
+  zigbee_permit_join:
+    name: Allow devices to join
+    initial: off
+    icon: mdi:cellphone-wireless
+
+timer:
+  zigbee_permit_join:
+    name: Time remaining
+    duration: 600 # Updated this to the number of seconds you wish
