@@ -37,24 +37,8 @@ mqtt:
   broker: core-mosquitto # This will have to be your mqtt broker, Mosquitto addon is recommended.
   discovery: true
 
-input_boolean:
-  zigbee_permit_join:
-    name: Allow devices to join
-    initial: off
-    icon: mdi:cellphone-wireless
-timer:
-  zigbee_permit_join:
-    name: Time remaining
-    duration: 600 # Updated this to the number of seconds you wish
+
     
 webhook:
 
-zigbee2mqtt_networkmap:
-   #topic: your topic (optional, default zigbee2mqtt)
-   
-panel_iframe:
-  networkmap:
-    title: 'Zigbee Map'
-    url: '/local/community/zigbee2mqtt_networkmap/map.html'
-    icon: 'mdi:graphql'
-    
+
